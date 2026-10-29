@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Financeiro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Controle Financeiro</h1>
+        <p>Painel de gestão de receitas e despesas</p>
+    </header>
+
+    <main>
+        <section class="indicadores">
+            <div class="card">
+                <h3>Saldo atual</h3>
+                <p id="saldo">R$ 0,00</p>
+            </div>
+
+            <div class="card">
+                <h3>Receitas</h3>
+                <p id="receitas">R$ 0,00</p>
+            </div>
+
+            <div class="card">
+                <h3>Despesas</h3>
+                <p id="despesas">R$ 0,00</p>
+            </div>
+        </section>
+
+        <section class="formulario">
+            <h2>Nova movimentação</h2>
+
+            <form id="formFinanceiro">
+                <input
+                    type="text"
+                    id="descricao"
+                    placeholder="Descrição da movimentação"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="valor"
+                    placeholder="Valor em reais"
+                    min="0.01"
+                    step="0.01"
+                    required
+                >
+
+                <select id="tipo" required>
+                    <option value="receita">Receita</option>
+                    <option value="despesa">Despesa</option>
+                </select>
+
+                <select id="categoria" required>
+                    <option value="Salário">Salário</option>
+                    <option value="Vendas">Vendas</option>
+                    <option value="Alimentação">Alimentação</option>
+                    <option value="Transporte">Transporte</option>
+                    <option value="Moradia">Moradia</option>
+                    <option value="Outros">Outros</option>
+                </select>
+
+                <button type="submit">Adicionar movimentação</button>
+            </form>
+        </section>
+
+        <section class="historico">
+            <h2>Histórico financeiro</h2>
+            <div id="listaMovimentacoes"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
